@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AA1EC7E6-A33D-44E6-9747-F867B2AF0368}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Sample.Console</RootNamespace>
+    <AssemblyName>Sample.Console</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Logging\Common.Logging.csproj">
+      <Project>{f1d5524e-6635-4f97-a2f2-bd46899d2a59}</Project>
+      <Name>Common.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common.Proxy.Wcf\Common.Proxy.Wcf.csproj">
+      <Project>{549d9a0a-4260-4235-94f6-82708b5ebceb}</Project>
+      <Name>Common.Proxy.Wcf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sample.Service.Proxy.Wcf.Client\Sample.Service.Proxy.Wcf.Client.csproj">
+      <Project>{1A039582-F6B7-44FA-9563-145C5136B966}</Project>
+      <Name>Sample.Service.Proxy.Wcf.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sample.Service.Wcf.DataModels\Sample.Service.Wcf.DataModels.csproj">
+      <Project>{840c3935-de92-46e5-8f63-d7c936e59079}</Project>
+      <Name>Sample.Service.Wcf.DataModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sample.Service.Wcf.Interfaces\Sample.Service.Wcf.Interfaces.csproj">
+      <Project>{0772b6c6-d47c-4d2d-a385-780d54f145d2}</Project>
+      <Name>Sample.Service.Wcf.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
